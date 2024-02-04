@@ -134,24 +134,30 @@
         $(this).attr("disabled", "disabled");
 
         var row = `<tr>
-                <form action="../admin/Inventory/add" method="post">
-                <td><input type="text" class="form-control" name="itemname"></td>
-                <td><input type="text" class="form-control" name="item"></td>
-                <td><input type="text" class="form-control" name="inuse"></td>
-                <td><input type="text" class="form-control" name="available"></td>
-                <td>
-                <button type="submit" class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></button>
-                <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                </td>
-                </form>
-                </tr>`;
-        $("table").append(row);
-        $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
+                      <td><input type="text" class="form-control input-itemcode"></td>
+                      <td><input type="text" class="form-control input-item"></td>
+                      <td><input type="text" class="form-control input-inuse"></td>
+                      <td><input type="text" class="form-control input-available"></td>
+                      <td>
+                        <form action="<?= base_url('admin/inventory/add') ?>" method="post" style="display:inline">
+                          <input type="hidden" name="itemcode">
+                          <input type="hidden" name="item">
+                          <input type="hidden" name="inuse">
+                          <input type="hidden" name="available">
+                          <button type="submit" class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></button>
+                        </form>
+                        <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                      </td>
+                  </tr>`;
+        $("table tbody").append(row);
+        var index = $('table tbody tr').length;
+        $("table tbody tr").eq(index - 1).find(".add, .edit").toggle();
         $('[data-toggle="tooltip"]').tooltip();
       });
       // Add row on add button click
-      $(document).on("click", ".add", function() {
+      $(document).on("click", ".add", function(e) {
+        e.preventDefault();
         var empty = false;
         var input = $(this).parents("tr").find('input[type="text"]');
         input.each(function() {
@@ -164,25 +170,42 @@
         });
         $(this).parents("tr").find(".error").first().focus();
         if (!empty) {
+
+          $(this).parent('form').find('input[name="itemcode"]').val($(this).parents('tr').find('.input-itemcode').val());
+          $(this).parent('form').find('input[name="item"]').val($(this).parents('tr').find('.input-item').val());
+          $(this).parent('form').find('input[name="inuse"]').val($(this).parents('tr').find('.input-inuse').val());
+          $(this).parent('form').find('input[name="available"]').val($(this).parents('tr').find('.input-available').val());
+
           input.each(function() {
             $(this).parent("td").html($(this).val());
+
           });
+
           $(this).parents("tr").find(".add, .edit").toggle();
           $(".add-new").removeAttr("disabled");
+          
+          $(this).parent('form').submit();
+          
         }
       });
       // Edit row on edit button click
       $(document).on("click", ".edit", function() {
-        $(this).parents("tr").find("td:not(:last-child)").each(function() {
-          $(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
+        $(this).parents("tr").find("td.data-itemcode").each(function() {
+          $(this).html('<input type="text" class="form-control input-itemcode" value="' + $(this).text() + '">');
         });
+        $(this).parents("tr").find("td.data-item").each(function() {
+          $(this).html('<input type="text" class="form-control input-item" value="' + $(this).text() + '">');
+        });
+        $(this).parents("tr").find("td.data-inuse").each(function() {
+          $(this).html('<input type="text" class="form-control input-inuse" value="' + $(this).text() + '">');
+        });
+        $(this).parents("tr").find("td.data-available").each(function() {
+          $(this).html('<input type="text" class="form-control input-available" value="' + $(this).text() + '">');
+        });
+        
         $(this).parents("tr").find(".add, .edit").toggle();
+
         $(".add-new").attr("disabled", "disabled");
-      });
-      // Delete row on delete button click
-      $(document).on("click", ".delete", function() {
-        $(this).parents("tr").remove();
-        $(".add-new").removeAttr("disabled");
       });
     });
   </script>
@@ -201,11 +224,20 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
       <div class="container-fluid">
+
         <div class="row">
           <div class="col-lg-12">
             <a href="#" class="btn" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
             <div class="container-lg">
               <div class="table-responsive">
+                <div class="text-center">
+                  <?php if(isset($error)): ?>
+                  <div class="mx-auto alert alert-danger col-4"><?= $error ?></div>
+                  <?php endif; ?>
+                  <?php if(isset($success)): ?>
+                  <div class="mx-auto alert alert-success col-4"><?= $success ?></div>
+                  <?php endif; ?>
+                </div>
                 <div class="table-wrapper">
                   <div class="table-title">
                     <div class="row">
@@ -228,6 +260,28 @@
                       </tr>
                     </thead>
                     <tbody>
+                      <?php if(count($items) > 0): ?>
+                        <?php foreach($items as $item): ?>
+                          <tr>
+                            <td class="data-itemcode"><?= $item['Item_code'] ?></td>
+                            <td class="data-item"><?= $item['Item_name'] ?></td>
+                            <td class="data-inuse"><?= $item['In_use_stock'] ?></td>
+                            <td class="data-available"><?= $item['Available_stock'] ?></td>
+                            <td>
+                              <form action="<?= base_url('admin/inventory/edit') ?>" method="post" style="display:inline">
+                                <input type="hidden" name="itemcode">
+                                <input type="hidden" name="item">
+                                <input type="hidden" name="inuse">
+                                <input type="hidden" name="available">
+                                <input type="hidden" name="id" value="<?= $item['id'] ?>">
+                                <button type="submit" class="add" title="" data-toggle="tooltip" style="display: none;" data-original-title="Add" aria-describedby="tooltip546351"><i class="material-icons"></i></button><div class="tooltip fade top in" role="tooltip" id="tooltip546351" style="top: 154.175px; left: 600.1px; display: block;"><div class="tooltip-arrow" style="left: 50%;"></div><div class="tooltip-inner">Add</div></div>
+                              </form>
+                              <a class="edit" title="" data-toggle="tooltip" style="" data-original-title="Edit"><i class="material-icons">&#xE254;</i></a>
+                              <a href="<?= base_url('admin/inventory/delete/'.$item['id']) ?>" class="delete" title="" data-toggle="tooltip" data-original-title="Delete"><i class="material-icons">&#xE872;</i></a>
+                            </td>
+                          </tr>
+                        <?php endforeach; ?>
+                      <?php endif; ?>
                     </tbody>
                   </table>
                 </div>
@@ -253,6 +307,8 @@
         e.preventDefault();
         $("#wrapper").toggleClass("menuDisplayed");
       });
+
+      $('.alert').fadeOut(2000);
     });
   </script>
 
