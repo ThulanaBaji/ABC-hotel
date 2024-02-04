@@ -27,4 +27,26 @@ class Inventory extends CI_Controller
             return true;
         }
     }
-}
+
+    public function add(){
+
+        $data = array(
+            'itemname' => $_POST['itemname'],
+            'item' => $_POST['item'],
+            'inuse' => $_POST['inuse'],
+            'available' => $_POST['available'],
+        );
+
+        $this->load->model('Inventory_model');
+        $result = $this->Inventory_model->Addstock($data);
+
+        echo $result;
+        if ($result == -1) {
+            echo 'error';
+        }
+
+        print_r($data);
+    
+        }
+
+    }
