@@ -1,0 +1,116 @@
+.navbar {
+    background-color: rgba(150, 0, 24);
+
+
+}
+
+.navbar-toggler {
+    border: 1px solid black;
+}
+
+.navbar-nav .nav-link {
+    color: black;
+}
+
+.nav-link {
+    font-weight: 600;
+    border-color: black;
+}
+
+
+.btn-outline-dark {
+    color: black;
+    border-color: black;
+
+}
+
+.navbar-toggler-icon {
+    background-color: ;
+}
+
+
+body {
+    background-color: rgba(24, 25, 24, 255);
+}
+
+.logor {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    padding-top: 60px;
+}
+
+.logo img {
+    max-width: 1500px;
+    max-height: 1500px;
+
+
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.reveal.active {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.btn-outline-secondary {
+    border-color: white;
+    color: black;
+
+}
+
+.carousel-inner .carousel-item img {
+    margin: 0 auto;
+    margin: 0 auto;
+    display: block;
+    border: 1px solid black;
+    border-radius: 7px;
+    display: block;
+}
+
+.fig {
+    position: relative;
+}
+
+.fig::before {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.74) 18%, rgba(0, 0, 0, 0.02) 85%);
+}
+
+.fig figcaption {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    color: black;
+}
+
+
+.our{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.row{
+    color: white;
+    font-family: 'Barranco Black', sans-serif;
+}
+
+.col-md-4 {
+    margin-bottom: 20px;
+}
