@@ -22,4 +22,10 @@ Class Admin_model extends CI_Model {
             return false;
         }
     }
+
+    public function getBills(){
+        $result = $this->db->select('*')
+                    ->get('bill');
+        return $result->result_array();
+    }
 }

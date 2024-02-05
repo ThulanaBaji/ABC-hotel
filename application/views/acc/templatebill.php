@@ -15,7 +15,13 @@
         <td style="text-align:right;"><b>Receiver: <?php echo $customer_name ?></b></td>
     </tr>
     <tr>
-        <td><b>Date:</b> <?php echo date("F j\, Y", substr($check_out, 0, -3)) ?></td>
+        <td><b>Date:</b> <?php echo date("F j\, Y", strtotime($create_time)) ?></td>
+    </tr>
+    <tr>
+        <td><br><br><b>Check in  :</b> <?php echo date("F j\, Y", substr($check_in, 0, -3)) ?></td>
+    </tr>
+    <tr>
+        <td><b>Check out:</b> <?php echo date("F j\, Y", substr($check_out, 0, -3)) ?></td>
     </tr>
 <tr>
 <td></td>

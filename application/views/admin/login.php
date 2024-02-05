@@ -10,7 +10,7 @@
     <title>Web Admin</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-    <link href="<?= base_url('css/admin/style.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('css/admin/login.css') ?>" rel="stylesheet">
     <!-- Custom Stylesheet -->
     <link href="<?= base_url('css/admin/bootstrap.min.css') ?>" rel="stylesheet">
     </head>

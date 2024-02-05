@@ -217,6 +217,7 @@
         <li><a href="<?= base_url('admin/dashboard') ?>">Dahsboard</a></li>
         <li><a href="<?= base_url('admin/inventory') ?>">Inventory</a></li>
         <li><a href="<?= base_url('admin/profitloss') ?>">Profit & Loss</a></li>
+        <li><a href="<?= base_url('admin/billhistory')?>">Bill history</a></li>
         <li><a href="<?= base_url('admin/dashboard/logout') ?>">Logout</a></li>
       </ul>
     </div>

@@ -2,7 +2,7 @@
 
 //admin base controller for http://ABC-hotel.com/admin
 
-class Bills extends CI_Controller 
+class Billhistory extends CI_Controller 
 {
     public function __construct() {
         parent::__construct();
@@ -10,11 +10,13 @@ class Bills extends CI_Controller
         $this->load->library('form_validation');
         $this->load->helper('form');
         $this->load->library('session');
+        $this->load->model('Admin_model');
     }
 
     public function index(){
         if ($this->checkSessionExist()){
             $data = $this->session->userdata('admininfo');
+            $data['bills'] = $this->Admin_model->getBills();
             $this->load->view('admin/billhistory', $data);
         }
     }
