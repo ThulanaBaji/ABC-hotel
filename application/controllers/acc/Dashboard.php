@@ -69,16 +69,22 @@ class Dashboard extends CI_Controller
 
         $data['total'] = $total;
         
-        $this->Acc_model->addBill($data);
+        //$this->Acc_model->addBill($data);
 
         $data['days'] = $numdays;
         $data['perday'] = $data['room'] == 'deluxe' ? DELUXECHARGE : ($data['room'] == 'double' ? DOUBLECHARGE : TRIPLECHARGE);
         $data['roomsubtotal'] = $data['days'] * $data['perday'];
-        $data['items'] = json_decode($data['itemjson']);
+        
+        if(isset($data['itemjson']))
+            $data['items'] = json_decode($data['itemjson']);
+        else
+            $data['items'] = [];
 
         $data['customer_name'] = $data['name'];
         $data['check_out'] = $data['co'];
-        
+        $data['check_in'] = $data['ci'];
+        date_default_timezone_set('Asia/Colombo');
+        $data['create_time'] = Date('Y-m-d H:i:s', time());
         $this->generatePDF($data);
     }
 

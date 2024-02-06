@@ -28,4 +28,13 @@ Class Admin_model extends CI_Model {
                     ->get('bill');
         return $result->result_array();
     }
+
+    public function getChartData(){
+
+        $result = $this->db->select('create_time, total, room')
+                    ->order_by('create_time', 'ASC')
+                    ->get('bill');
+        return $result->result_array();
+
+    }
 }
