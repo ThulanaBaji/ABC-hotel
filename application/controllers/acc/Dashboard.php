@@ -69,7 +69,7 @@ class Dashboard extends CI_Controller
 
         $data['total'] = $total;
         
-        //$this->Acc_model->addBill($data);
+        $this->Acc_model->addBill($data);
 
         $data['days'] = $numdays;
         $data['perday'] = $data['room'] == 'deluxe' ? DELUXECHARGE : ($data['room'] == 'double' ? DOUBLECHARGE : TRIPLECHARGE);
