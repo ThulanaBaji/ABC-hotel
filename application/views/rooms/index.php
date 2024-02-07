@@ -73,15 +73,11 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url() ?>">Dining</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url() ?>">things to do</a>
+            <a class="nav-link" href="<?php echo base_url() . 'about' ?>">About Us</a>
           </li>
         </ul>
     </div>
-    <a href="<?php echo base_url() . 'rooms' ?>" role="button" class="btn btn-outline-dark">Bookings</a>
-
+    <a href="<?php echo base_url() . 'booking' ?>" role="button" class="btn btn-outline-dark">Bookings</a>
   </nav>
 
 

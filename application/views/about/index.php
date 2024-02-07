@@ -14,20 +14,13 @@
 <body>
 
     <style>
-        .contact-center {
+        .contact-center3 {
             height: 30vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
-
-        .css-1j8o68f {
-            width: 200px;
-            height: auto;
-            /*padding-top: 35px;*/
-        }
-
 
         #cnum {
             padding-top: 5px;
@@ -36,13 +29,34 @@
             color: white;
         }
 
-        .abc {
-            color: white;
-            font-size: 50px;
-            font-family: 'Barranco Black', sans-serif;
-
+        .box {
+            height: fit-content;
+            width: auto;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(61, 60, 58);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+            position: relative;
+            padding-top: 30px;
+            padding-bottom: 30px;
         }
 
+        .add {
+            margin-bottom: 40px;
+            font-size: larger;
+            width: fit-content;
+        }
+
+        .res {
+            font-size: larger;
+
+        }
     </style>
 
     <nav class="navbar navbar-expand-lg ">
@@ -77,24 +91,55 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url() ?>">Dining</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url() . 'about' ?>">About Us</a>
                     </li>
                 </ul>
         </div>
-        <a href="./rooms" role="button" class="btn btn-outline-dark">Bookings</a>
+        <a href="<?php echo base_url() . 'booking' ?>" role="button" class="btn btn-outline-dark">Bookings</a>
     </nav>
 
-    <section class="contact-center">
+    <section class="contact-center3">
         <div class="abc">
             CONTACT US
         </div>
         <div id="cnum">
-           <center>Planning a stay at The ABC Hotel? Reach out to us by phone or email to secure your reservation today!</center></div>
-
+            <center>Planning a stay at The ABC Hotel? Reach out to us by phone or email to secure your reservation today!</center>
+        </div>
     </section>
+
+    <section class="box">
+        <div class="row">
+            <div class="add">
+                ADDRESS: 323/5, Horopatha, Negombo, Sri Lanka
+            </div>
+        </div>
+        <div class="row">
+            <div class="add">
+                Mobile number: +94 01125678
+            </div>
+        </div>
+        <div class="row">
+            <div class="add">
+                INQUIRIES: abchotels@info.lk
+            </div>
+        </div>
+        <div class="row">
+            <div class="res">
+                Reservations: reservationabc@info.lk
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-center" style="margin-top: 50px;">
+    <div class="abc">
+      HOTEL ABC
+    </div>
+    <hr class="hr3">
+    <h3 id="cnum">(+94) 0775950824</h3>
+    <h2 id="email">abchotels@info.lk</h2>
+    <i class="bi bi-c-circle"> Copyright 2024 ABC Hotels (PVT) Ltd.</i>
+
+  </section>
 
 
 </body>

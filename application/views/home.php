@@ -38,46 +38,6 @@
       overflow: hidden;
     }
 
-    .contact-center {
-      height: 45vh;
-      background-color: rgba(150, 0, 24, 50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .css-1j8o68f {
-      width: 200px;
-      height: auto;
-      /*padding-top: 35px;*/
-    }
-
-    .hr3 {
-      width: 50%;
-      border: 2px solid white;
-    }
-
-    #cnum {
-      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
-        Helvetica, Arial, "Lucida Grande", sans-serif;
-      color: white;
-    }
-
-    .abc{
-      color: white;
-      font-size: 50px;
-      font-family: 'Barranco Black', sans-serif;
-
-    }
-
-    #email{
-      color: white;
-    }
-
-    .bi{
-      color: white;
-    }
   </style>
 
   <nav class="navbar navbar-expand-lg  fixed-top">
@@ -110,9 +70,6 @@
                 <a class="dropdown-item" href="<?php echo base_url('rooms/triple') ?>">Triple rooms</a>
               </div>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url() ?>">Dining</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url() . 'about' ?>">About Us</a>
