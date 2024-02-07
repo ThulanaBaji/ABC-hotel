@@ -8,70 +8,14 @@
 
     <link rel="stylesheet" href="<?php echo base_url() . 'css/style.css' ?>">
     <link rel="stylesheet" href="<?php echo base_url() . '/css/Hotel.css' ?>">
+    <link rel="stylesheet" href="<?php echo base_url() . '/css/room.css' ?>">
+
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <title>Deluxe Room</title>
-
-    <style>
-        
-       
-
-        .booking-bg {
-            margin-left: auto;
-            margin-right: auto;
-
-            border-top: 10px;
-            height: auto;
-            display: flex;
-
-
-            position: relative;
-            align-items: center;
-
-
-        }
-
-        .rb {
-            margin-right: auto;
-            margin-left: auto;
-        }
-
-        .rb h1 {
-            font-family: 'Barranco Black', sans-serif;
-            font-size: 65px;
-
-
-        }
-
-        .bform {
-            margin-left: auto;
-            margin-right: auto;
-            width: 500px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-
-        }
-
-        .form {
-            position: absolute;
-        }
-
-        .bgr {
-            background-color: rgba(150, 0, 24);
-            border-top: 10px solid white;
-
-
-        }
-
-        .btn-primary {
-            border-radius: 1;
-            background-color: white;
-            color: black;
-        }
-    </style>
 </head>
 
 <body>
@@ -101,9 +45,9 @@
                                 <span class="sr-only">Toggle Dropdown</span>
                             </button>
                             <div class="dropdown-menu" style="background-color: grey;" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="<?php echo base_url() ?>">Deluxe rooms</a>
-                                <a class="dropdown-item" href="<?php echo base_url() ?>">Double rooms</a>
-                                <a class="dropdown-item" href="<?php echo base_url() ?>">Triple rooms</a>
+                                <a class="dropdown-item" href="<?php echo base_url('rooms/deluxe') ?>">Deluxe rooms</a>
+                                <a class="dropdown-item" href="<?php echo base_url('rooms/double') ?>">Double rooms</a>
+                                <a class="dropdown-item" href="<?php echo base_url('rooms/triple') ?>">Triple rooms</a>
                             </div>
                         </div>
                     </li>
@@ -115,29 +59,47 @@
                     </li>
                 </ul>
         </div>
-        <button type="button" class="btn btn-outline-dark">Bookings</button>
+        <a href="<?php echo base_url() . 'rooms' ?>" role="button" class="btn btn-outline-dark">Bookings</a>
 
     </nav>
 
+
     <section class="room1">
         <div class="deluxe">
-            <img src="../images/deluxe.jpg">
+            <img src="../images/double.jpg">
             <p class="caption">Double ROOM</p>
         </div>
     </section>
 
     <div class="con">
         <div class="text">
-            <h3 class="p1"> "Experience luxury in our deluxe rooms—modern, stylish, and perfect for your stay, whether work or relaxation."</h3>
+            <h3 class="p1"> "Experience comfort in our double rooms—ideal for couples or a cozy stay."</h3>
             <h5 class="he1">For more information</h5>
-            <button type="button" class="btn btn-outline-dark">Call Us</button>
+            <a href="tel:+940772833935" type="button" class="btn btn-outline-dark">Call Us</a>
         </div>
     </div>
 
 
-    <div class="container">
-        
-    </div>
+    <section class="body-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="about-left">
+                        <dl>
+                            <dt id="spec">Our Specialities</dt>
+                            <dd> • Ample Space</dd>
+                            <dd> • Private Retreat</dd>
+                            <dd> • Modern Amenities</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="about-right">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <div class="bgr">
@@ -148,7 +110,7 @@
 
             <div class="bform">
                 <?php echo form_open('Rooms/bookings'); ?>
-                <input type="hidden" id="room" name="room" value="double">
+                <input type="hidden" id="room" name="room" value="deluxe">
 
                 <div class="row">
                     <div class="col">

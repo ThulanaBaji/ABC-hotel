@@ -21,7 +21,6 @@
     }
 
     .about-right {
-      position: absolute;
     }
 
     .about-right img {
@@ -36,10 +35,49 @@
     .row {
       padding-top: 20px;
       padding-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .contact-center {
+      height: 45vh;
+      background-color: rgba(150, 0, 24, 50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .css-1j8o68f {
+      width: 200px;
+      height: auto;
+      /*padding-top: 35px;*/
+    }
+
+    .hr3 {
+      width: 50%;
+      border: 2px solid white;
+    }
+
+    #cnum {
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+        Helvetica, Arial, "Lucida Grande", sans-serif;
+      color: white;
+    }
+
+    .abc{
+      color: white;
+      font-size: 50px;
+      font-family: 'Barranco Black', sans-serif;
 
     }
 
+    #email{
+      color: white;
+    }
 
+    .bi{
+      color: white;
+    }
   </style>
 
   <nav class="navbar navbar-expand-lg  fixed-top">
@@ -67,9 +105,9 @@
                 <span class="sr-only">Toggle Dropdown</span>
               </button>
               <div class="dropdown-menu" style="background-color: grey;" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="<?php echo base_url() ?>">Deluxe rooms</a>
-                <a class="dropdown-item" href="<?php echo base_url() ?>">Double rooms</a>
-                <a class="dropdown-item" href="<?php echo base_url() ?>">Triple rooms</a>
+                <a class="dropdown-item" href="<?php echo base_url('rooms/deluxe') ?>">Deluxe rooms</a>
+                <a class="dropdown-item" href="<?php echo base_url('rooms/double') ?>">Double rooms</a>
+                <a class="dropdown-item" href="<?php echo base_url('rooms/triple') ?>">Triple rooms</a>
               </div>
             </div>
           </li>
@@ -77,11 +115,11 @@
             <a class="nav-link" href="<?php echo base_url() ?>">Dining</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url() ?>">things to do</a>
+            <a class="nav-link" href="<?php echo base_url() . 'about' ?>">About Us</a>
           </li>
         </ul>
     </div>
-    <button type="button" class="btn btn-outline-dark">Bookings</button>
+    <a href="./rooms" role="button" class="btn btn-outline-dark">Bookings</a>
 
   </nav>
 
@@ -114,6 +152,17 @@
 
       </div>
     </div>
+  </section>
+
+  <section class="contact-center">
+    <div class="abc">
+      HOTEL ABC
+    </div>
+    <hr class="hr3">
+    <h3 id="cnum">(+94) 0775950824</h3>
+    <h2 id="email">abchotels@info.lk</h2>
+    <i class="bi bi-c-circle"> Copyright 2024 ABC Hotels (PVT) Ltd.</i>
+
   </section>
 
   <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->

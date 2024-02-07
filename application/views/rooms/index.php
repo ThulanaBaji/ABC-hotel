@@ -66,9 +66,9 @@
                 <span class="sr-only">Toggle Dropdown</span>
               </button>
               <div class="dropdown-menu" style="background-color: grey;" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="<?php echo base_url() ?>">Deluxe rooms</a>
-                <a class="dropdown-item" href="<?php echo base_url() ?>">Double rooms</a>
-                <a class="dropdown-item" href="<?php echo base_url() ?>">Triple rooms</a>
+                <a class="dropdown-item" href="<?php echo base_url('rooms/deluxe') ?>">Deluxe rooms</a>
+                <a class="dropdown-item" href="<?php echo base_url('rooms/double') ?>">Double rooms</a>
+                <a class="dropdown-item" href="<?php echo base_url('rooms/triple') ?>">Triple rooms</a>
               </div>
             </div>
           </li>
@@ -80,7 +80,7 @@
           </li>
         </ul>
     </div>
-    <button type="button" class="btn btn-outline-dark">Bookings</button>
+    <a href="<?php echo base_url() . 'rooms' ?>" role="button" class="btn btn-outline-dark">Bookings</a>
 
   </nav>
 
