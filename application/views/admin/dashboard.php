@@ -11,15 +11,34 @@
 </head>
 
 <body>
+
+    <style>
+        .dash {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 45px;
+            font-family: 'Barranco Black', sans-serif;
+            margin-top: 30px;
+        }
+
+        .btn-group {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
     <div id="wrapper">
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li><a href="<?= base_url('admin/dashboard')?>">Dahsboard</a></li>
-                <li><a href="<?= base_url('admin/inventory')?>">Inventory</a></li>
-                <li><a href="<?= base_url('admin/profitloss')?>">Profit & Loss</a></li>
-                <li><a href="<?= base_url('admin/billhistory')?>">Bill history</a></li>
-                <li><a href="<?= base_url('admin/dashboard/logout')?>">Logout</a></li>
+                <li><a href="<?= base_url('admin/dashboard') ?>">Dahsboard</a></li>
+                <li><a href="<?= base_url('admin/inventory') ?>">Inventory</a></li>
+                <li><a href="<?= base_url('admin/profitloss') ?>">Profit & Loss</a></li>
+                <li><a href="<?= base_url('admin/billhistory') ?>">Bill history</a></li>
+                <li><a href="<?= base_url('admin/dashboard/logout') ?>">Logout</a></li>
             </ul>
         </div>
 
@@ -29,12 +48,28 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <a href="#" class="btn" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
-                         
+
+                        <div class="dash">
+                            Welcome admin
+                        </div>
+
+                        <div class="row">
+                            <div class="about-left">
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <a href="../admin/inventory" class="btn btn-default">Inventory</a>
+                                    <a href="../admin/billhistory" class="btn btn-default">Bill History</a>
+                                    <a href="../admin/profitloss" class="btn btn-default">Profit & Loss</a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
+
 
 
 

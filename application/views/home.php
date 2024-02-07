@@ -20,8 +20,7 @@
 
     }
 
-    .about-right {
-    }
+    .about-right {}
 
     .about-right img {
       vertical-align: middle;
@@ -37,7 +36,6 @@
       padding-bottom: 20px;
       overflow: hidden;
     }
-
   </style>
 
   <nav class="navbar navbar-expand-lg  fixed-top">
@@ -76,7 +74,7 @@
           </li>
         </ul>
     </div>
-    <a href="./rooms" role="button" class="btn btn-outline-dark">Bookings</a>
+    <a href="<?php echo base_url() . 'booking' ?>" role="button" class="btn btn-outline-dark">Bookings</a>
 
   </nav>
 
