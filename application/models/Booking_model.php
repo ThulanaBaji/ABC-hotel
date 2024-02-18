@@ -17,7 +17,6 @@ class Booking_model extends CI_Model
             'departure' =>   $data['departure'],
             'message' =>   $data['message']);
 
-
         $this->db->insert('booking', $insert_data);
 
         if ($this->db->affected_rows() == 1) {
