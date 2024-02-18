@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="<?php echo base_url() . '/css/Hotel.css' ?>">
     <link rel="stylesheet" href="<?php echo base_url() . '/css/room.css' ?>">
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <title>Home</title>
 </head>
 
@@ -36,7 +40,6 @@
             font-style: italic;
             color: white;
         }
-
     </style>
 
     <nav class="navbar navbar-expand-lg ">
@@ -80,7 +83,7 @@
 
     <section class="contact-center2">
         <div class="abc">
-           BOOK NOW
+            BOOK NOW
         </div>
         <div id="cnum2">
             <center>Planning a stay at The ABC Hotel? Reach out to us by phone or email to secure your reservation today!</center>
@@ -183,6 +186,24 @@
 
                 </div>
 
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="exampleInputselect">Room Selection</label>
+                            <div class="input-group mb-3">
+
+                                <select class="custom-select" id="inputGroupSelection" name="room">
+                                    <option selected>Select Room</option>
+                                    <option value="Deluxe">Deluxe</option>
+                                    <option value="Double">Double</option>
+                                    <option value="Triple">Triple</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
 
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Message</label>
@@ -199,15 +220,41 @@
     </div>
 
     <section class="contact-center">
-    <div class="abc">
-      HOTEL ABC
-    </div>
-    <hr class="hr3">
-    <h3 id="cnum">(+94) 0775950824</h3>
-    <h2 id="email">abchotels@info.lk</h2>
-    <i class="bi bi-c-circle"> Copyright 2024 ABC Hotels (PVT) Ltd.</i>
+        <div class="abc">
+            HOTEL ABC
+        </div>
+        <hr class="hr3">
+        <h3 id="cnum">(+94) 0775950824</h3>
+        <h2 id="email">abchotels@info.lk</h2>
+        <i class="bi bi-c-circle"> Copyright 2024 ABC Hotels (PVT) Ltd.</i>
 
-  </section>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            $("#bookingForm").submit(function() {
+                var fullName = $("#exampleInputFullName1").val();
+
+                if (fullName.trim() === "") {
+                    $("#fullNameError").text("Full Name is required.");
+                    return false; // Prevent form submission
+                } else {
+                    $("#fullNameError").text(""); // Clear the error message
+                    return true; // Allow form submission
+                }
+            });
+        });
+    </script>
+
+    <script>
+        $(function() {
+            $("#exampleInputArrival").datepicker();
+            $("#exampleInputDeparture").datepicker();
+        });
+    </script>
 
 
 </body>

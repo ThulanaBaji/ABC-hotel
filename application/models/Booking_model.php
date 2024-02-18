@@ -13,7 +13,11 @@ class Booking_model extends CI_Model
             'country' => $data['country'],
             'adults' => $data['adults'],
             'children' => $data['children'],
-            'arrival' =>   $data['arrival']);
+            'arrival' =>   $data['arrival'],
+            'departure' =>   $data['departure'],
+            'message' =>   $data['message']);
+
+
         $this->db->insert('booking', $insert_data);
 
         if ($this->db->affected_rows() == 1) {

@@ -16,16 +16,18 @@ class booking extends CI_Controller {
 
     public function book()
     {
-        $this->form_validation->set_rules('room', 'Roomname');
         $this->form_validation->set_rules('name', 'Username', 'required');
         $this->form_validation->set_rules('email', 'Email', 'required');
         $this->form_validation->set_rules('mobile', 'Telephone', 'required');
         $this->form_validation->set_rules('country', 'Country', 'required');
-        $this->form_validation->set_rules('message', 'Message');
         $this->form_validation->set_rules('adult', 'Adults', 'required');
         $this->form_validation->set_rules('child', 'Child', 'required');
         $this->form_validation->set_rules('arrival', 'Arrival', 'required');
         $this->form_validation->set_rules('departure', 'Departure', 'required');
+        $this->form_validation->set_rules('room', 'Roomname', 'required');
+        $this->form_validation->set_rules('message', 'Message');
+
+
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('booking/index.php');

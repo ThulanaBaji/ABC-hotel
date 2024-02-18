@@ -110,7 +110,7 @@
     <section class="box">
         <div class="row">
             <div class="add">
-                ADDRESS: 323/5, Horopatha, Negombo, Sri Lanka
+                ADDRESS: 323/5, Horopathana, Negombo, Sri Lanka
             </div>
         </div>
         <div class="row">
@@ -140,6 +140,8 @@
     <i class="bi bi-c-circle"> Copyright 2024 ABC Hotels (PVT) Ltd.</i>
 
   </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
 
 </body>
